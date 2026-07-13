@@ -2020,6 +2020,51 @@
       container.classList.add('has-active');
     }
   }
+    function showPage(pageId) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById('page-' + pageId)?.classList.add('active');
+    document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+    const navMap = { 'home': 0, 'kickoff': 1, 'tuesday': 2, 'wednesday': 3, 'thursday': 4, 'retro': 5, 'setup': 6 };
+    if (navMap[pageId] !== undefined) document.querySelectorAll('.nav-link')[navMap[pageId]].classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    document.getElementById('sideNav').classList.remove('open');
+    document.getElementById('navOverlay').classList.remove('open');
+    if (pageId === 'kickoff') setTimeout(() => renderTrack(), 50);
+
+    // Update URL hash without scrolling
+    history.pushState(null, '', '#' + pageId);
+  }
+
+  // Handle browser back/forward buttons
+  window.addEventListener('popstate', () => {
+    const hash = window.location.hash.replace('#', '') || 'home';
+    const validPages = ['home', 'kickoff', 'tuesday', 'wednesday', 'thursday', 'retro', 'setup'];
+    if (validPages.includes(hash)) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      document.getElementById('page-' + hash)?.classList.add('active');
+      document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+      const navMap = { 'home': 0, 'kickoff': 1, 'tuesday': 2, 'wednesday': 3, 'thursday': 4, 'retro': 5, 'setup': 6 };
+      if (navMap[hash] !== undefined) document.querySelectorAll('.nav-link')[navMap[hash]].classList.add('active');
+      window.scrollTo({ top: 0 });
+      if (hash === 'kickoff') setTimeout(() => renderTrack(), 50);
+    }
+  });
+
+  // On initial load, check for hash in URL
+  function checkInitialHash() {
+    const hash = window.location.hash.replace('#', '');
+    const validPages = ['home', 'kickoff', 'tuesday', 'wednesday', 'thursday', 'retro', 'setup'];
+    if (hash && validPages.includes(hash)) {
+      showPage(hash);
+        document.addEventListener('DOMContentLoaded', () => {
+    loadTasks();
+    renderTrack();
+    setTimeout(() => renderTrack(), 100);
+    setTimeout(() => renderTrack(), 300);
+    checkInitialHash();
+  });
+    }
+  }
 </script>
 
 </body>
