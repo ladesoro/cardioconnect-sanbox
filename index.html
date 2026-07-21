@@ -1039,6 +1039,83 @@
   .retro-prompt:nth-child(3) .retro-prompt-step { background: var(--bsc-purple-light); color: var(--bsc-purple); }
   .retro-prompt:nth-child(4) .retro-prompt-step { background: var(--bsc-blue-light); color: var(--bsc-blue); }
 
+  /* ===== HOMEWORK HEADER TOOLS ===== */
+  .homework-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  .homework-header-main {
+    max-width: 600px;
+  }
+
+  .homework-tools {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: flex-end;
+  }
+
+  .homework-tools-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: rgba(255,255,255,0.7);
+    font-weight: 600;
+    margin-bottom: 2px;
+  }
+
+  .homework-tool-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 600;
+    text-decoration: none;
+    color: white;
+    background: rgba(0,0,0,0.18);
+    border: 1px solid rgba(255,255,255,0.35);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: all 0.2s ease;
+  }
+
+  .homework-tool-btn svg {
+    width: 13px;
+    height: 13px;
+    fill: currentColor;
+  }
+
+  .homework-tool-btn:hover {
+    background: white;
+    color: var(--bsc-blue-dark);
+    transform: translateY(-1px);
+  }
+
+  @media (max-width: 900px) {
+    .homework-header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .homework-tools {
+      align-items: flex-start;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 8px;
+    }
+
+    .homework-tools-label {
+      width: 100%;
+      margin-bottom: 0;
+    }
+  }
+
     /* ===== PASSWORD GATE ===== */
   .password-gate {
     position: fixed;
@@ -1184,6 +1261,8 @@
   }
   /* ===== END PASSWORD GATE ===== */
 
+    
+
 </style>
 </head>
 <body>
@@ -1261,7 +1340,7 @@
   <a class="nav-link" onclick="showPage('wednesday')"><span class="nav-icon"><svg><use href="#i-refresh"/></svg></span> Wednesday: Coordinate</a>
   <a class="nav-link" onclick="showPage('thursday')"><span class="nav-icon"><svg><use href="#i-bolt"/></svg></span> Thursday: Execute</a>
   <div class="nav-section-label">Friday</div>
-  <a class="nav-link" onclick="showPage('retro')"><span class="nav-icon"><svg><use href="#i-chat"/></svg></span> Retro</a>
+  <a class="nav-link" onclick="showPage('retro')"><span class="nav-icon"><svg><use href="#i-chat"/></svg></span> Debrief</a>
    
   
     <a class="nav-link" onclick="showPage('setup')" style="margin-top: auto; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 16px;"><span class="nav-icon"><svg><use href="#i-gear"/></svg></span> Set Up & Access</a>
@@ -1295,12 +1374,12 @@
         <div class="timeline-day" onclick="showPage('tuesday')"><div class="timeline-day-icon"><svg><use href="#i-calendar"/></svg></div><div class="timeline-dot"></div><div class="timeline-day-label">Tuesday</div><div class="timeline-day-title">Plan Your Week</div></div>
         <div class="timeline-day" onclick="showPage('wednesday')"><div class="timeline-day-icon"><svg><use href="#i-refresh"/></svg></div><div class="timeline-dot"></div><div class="timeline-day-label">Wednesday</div><div class="timeline-day-title">Coordinate</div></div>
         <div class="timeline-day" onclick="showPage('thursday')"><div class="timeline-day-icon"><svg><use href="#i-bolt"/></svg></div><div class="timeline-dot"></div><div class="timeline-day-label">Thursday</div><div class="timeline-day-title">Execute & React</div></div>
-        <div class="timeline-day" onclick="showPage('retro')"><div class="timeline-day-icon"><svg><use href="#i-chat"/></svg></div><div class="timeline-dot"></div><div class="timeline-day-label">Friday</div><div class="timeline-day-title">Retro</div></div>
+        <div class="timeline-day" onclick="showPage('retro')"><div class="timeline-day-icon"><svg><use href="#i-chat"/></svg></div><div class="timeline-dot"></div><div class="timeline-day-label">Friday</div><div class="timeline-day-title">Debrief</div></div>
       </div>
       <div class="welcome-grid">
         <a class="welcome-card" onclick="showPage('kickoff')"><div class="wc-icon"><svg style="fill:var(--bsc-blue);"><use href="#i-compass"/></svg></div><div class="wc-title">Kickoff</div><div class="wc-desc">Meet the tools and learn what to expect</div></a>
         <a class="welcome-card" onclick="showPage('tuesday')"><div class="wc-icon"><svg style="fill:var(--bsc-purple);"><use href="#i-clipboard"/></svg></div><div class="wc-title">Homework</div><div class="wc-desc">Guided tasks for Tues – Thurs</div></a>
-        <a class="welcome-card" onclick="showPage('retro')"><div class="wc-icon"><svg style="fill:var(--bsc-teal);"><use href="#i-chat"/></svg></div><div class="wc-title">Retro</div><div class="wc-desc">Friday's group reflection</div></a>
+        <a class="welcome-card" onclick="showPage('retro')"><div class="wc-icon"><svg style="fill:var(--bsc-teal);"><use href="#i-chat"/></svg></div><div class="wc-title">Debrief</div><div class="wc-desc">Friday's group reflection</div></a>
       </div>
     </div>
   </div>
@@ -1373,7 +1452,7 @@
             <div class="concept-accent"></div>
             <div class="concept-body">
               <div class="concept-title">Unassigned Is Normal</div>
-              <div class="concept-desc">You can add a case without assigning it to anyone — that's by design. Unassigned work orders show up in the console so managers can assign them based on availability and coverage.</div>
+              <div class="concept-desc">You can add a case without assigning it to anyone — that's by design. Unassigned work orders show up in the Console so it can be assigned later based on availability and coverage.</div>
             </div>
           </div>
           <div class="concept-item">
@@ -1437,7 +1516,7 @@
               <div class="info-tile-icon"><svg><use href="#i-bolt"/></svg></div>
               <div class="info-tile-label">How It Helps</div>
             </div>
-            <div class="info-tile-desc">Your feedback directly shapes what gets built and how it works before the full rollout.</div>
+            <div class="info-tile-desc">Your feedback directly shapes what gets built and how it works before the launch.</div>
           </div>
         </div>
       </div>
@@ -1448,7 +1527,7 @@
         <div style="display: flex; flex-direction: column; gap: 0; margin-top: 12px;">
           <div class="week-row"><div class="week-day-label blue">Monday</div><div class="week-day-desc"><strong>Kickoff (today)</strong> — We walk through the tools together and get you set up.</div></div>
           <div class="week-row"><div class="week-day-label purple">Tues – Thurs</div><div class="week-day-desc"><strong>Homework</strong> — Work through guided scenarios on your own time. This site walks you through each day's tasks. Quick feedback surveys are linked along the way.</div></div>
-          <div class="week-row"><div class="week-day-label teal">Friday</div><div class="week-day-desc"><strong>Retro</strong> — We come back together to discuss what worked, what didn't, and what you'd change.</div></div>
+          <div class="week-row"><div class="week-day-label teal">Friday</div><div class="week-day-desc"><strong>Debrief</strong> — We come back together to discuss what worked, what didn't, and what you'd change.</div></div>
         </div>
         <div class="card-callout" style="margin-top: 24px;">
           <strong>Remember:</strong> These tools are still in development. Things may not be perfect — and that's okay. We'd rather find the rough edges now, with your help, than after launch. There are no wrong answers.
@@ -1465,7 +1544,26 @@
 
   <!-- ==================== TUESDAY ==================== -->
   <div class="page" id="page-tuesday">
-    <div class="section-hero homework"><h1><svg><use href="#i-calendar"/></svg> Tuesday: Plan Your Week</h1><p>You're setting up your week — add your real cases, activities, and time blocks.</p></div>
+    <div class="section-hero homework">
+  <div class="homework-header">
+    <div class="homework-header-main">
+      <h1><svg><use href="#i-calendar"/></svg> Tuesday: Plan Your Week</h1>
+      <p>You're setting up your week — add your real cases, activities, and time blocks.</p>
+    </div>
+    <div class="homework-tools">
+      <div class="homework-tools-label">Open tools</div>
+      <a href="GO_APP_URL_HERE" target="_blank" class="homework-tool-btn">
+        <svg><use href="#i-phone"/></svg> Go App
+      </a>
+       <a href="CONSOLE_URL_HERE" target="_blank" class="homework-tool-btn">
+        <svg><use href="#i-monitor"/></svg> Console
+      </a>
+      <a href="DASHBOARD_URL_HERE" target="_blank" class="homework-tool-btn">
+        <svg><use href="#i-chart"/></svg> Dashboard
+      </a>
+    </div>
+  </div>
+</div>
     <div class="content">
       <div class="card day-card tuesday">
         <div class="day-label">Day 1 of Homework</div>
@@ -1488,7 +1586,26 @@
 
   <!-- ==================== WEDNESDAY ==================== -->
   <div class="page" id="page-wednesday">
-    <div class="section-hero homework"><h1><svg><use href="#i-refresh"/></svg> Wednesday: Coordinate Coverage</h1><p>Things are shifting — coordinate with your team and keep the schedule on track.</p></div>
+    <div class="section-hero homework">
+  <div class="homework-header">
+    <div class="homework-header-main">
+      <h1><svg><use href="#i-refresh"/></svg> Wednesday: Coordinate Coverage</h1>
+      <p>Things are shifting — coordinate with your team and keep the schedule on track.</p>
+    </div>
+    <div class="homework-tools">
+      <div class="homework-tools-label">Open tools</div>
+      <a href="GO_APP_URL_HERE" target="_blank" class="homework-tool-btn">
+        <svg><use href="#i-phone"/></svg> Go App
+      </a>
+      <a href="CONSOLE_URL_HERE" target="_blank" class="homework-tool-btn">
+        <svg><use href="#i-monitor"/></svg> Console
+      </a>
+      <a href="DASHBOARD_URL_HERE" target="_blank" class="homework-tool-btn">
+        <svg><use href="#i-chart"/></svg> Dashboard
+      </a>
+    </div>
+  </div>
+</div>
     <div class="content">
       <div class="card day-card wednesday">
         <div class="day-label">Day 2 of Homework</div>
@@ -1519,11 +1636,30 @@
 
   <!-- ==================== THURSDAY ==================== -->
   <div class="page" id="page-thursday">
-    <div class="section-hero homework"><h1><svg><use href="#i-bolt"/></svg> Thursday: Execute & React</h1><p>Cases are in motion. Handle what comes up and close out your work.</p></div>
+    <div class="section-hero homework">
+  <div class="homework-header">
+    <div class="homework-header-main">
+      <h1><svg><use href="#i-bolt"/></svg> Thursday: Execute & React</h1>
+      <p>Cases are in motion. Handle what comes up and close out your work.</p>
+    </div>
+    <div class="homework-tools">
+      <div class="homework-tools-label">Open tools</div>
+      <a href="GO_APP_URL_HERE" target="_blank" class="homework-tool-btn">
+        <svg><use href="#i-phone"/></svg> Go App
+      </a>
+      <a href="CONSOLE_URL_HERE" target="_blank" class="homework-tool-btn">
+        <svg><use href="#i-monitor"/></svg> Console
+      </a>
+      <a href="DASHBOARD_URL_HERE" target="_blank" class="homework-tool-btn">
+        <svg><use href="#i-chart"/></svg> Dashboard
+      </a>
+    </div>
+  </div>
+</div>
     <div class="content">
       <div class="card day-card thursday">
         <div class="day-label">Day 3 of Homework</div>
-              <div class="day-scenario"><strong>Scenario:</strong> It's a busy day — last-minute changes are coming in, cases need to be handed off, and you need to close things out. Handle the changes, complete your work, and review how the week went. <br><br>One of today's tasks involves creating a procedure worksheet for a completed case — you'll do this from within the work order itself. The work order is the plan, the procedure worksheet is the final record.</div>
+              <div class="day-scenario"><strong>Scenario:</strong> It's a busy day — last-minute changes are coming in, cases need to be handed off, and you need to close things out. Handle the changes, complete your work, and review how the week went. <br><br>One of today's tasks involves creating a procedure worksheet for a completed case — this only applies to AFS. You'll do this from within the work order itself. The work order is the plan, the procedure worksheet is the final record.</div>
         <h3 style="margin-top: 8px; margin-bottom: 12px; color: var(--bsc-teal);">1. Handle a last-minute change</h3>
         <ul class="task-list">
           <li class="task-item"><input type="checkbox" class="task-checkbox" data-task="thu-1" onchange="toggleTask(this)"><span class="task-text"><strong>Unassign yourself</strong> from an upcoming case <!--<span class="task-role-tag clinical">Clinical</span></span>--></li>
@@ -1532,7 +1668,7 @@
         </ul>
         <h3 style="margin-top: 24px; margin-bottom: 12px; color: var(--bsc-teal);">2. Close out a case</h3>
         <ul class="task-list">
-          <li class="task-item"><input type="checkbox" class="task-checkbox" data-task="thu-4" onchange="toggleTask(this)"><span class="task-text">Create a <strong>procedure record</strong> for a case "completed" earlier this week <!--<span class="task-role-tag all">All Roles</span></span>--></li>
+          <li class="task-item"><input type="checkbox" class="task-checkbox" data-task="thu-4" onchange="toggleTask(this)"><span class="task-text">Create a <strong>procedure record</strong> for a case "completed" earlier this week <span class="task-role-tag all">AFS Only</span></span></li>
         </ul>
         <h3 style="margin-top: 24px; margin-bottom: 12px; color: var(--bsc-teal);">3. Review the dashboard</h3>
         <ul class="task-list">
@@ -1544,18 +1680,18 @@
       <div class="card" style="text-align: center; background: var(--bsc-teal-light); border-color: var(--bsc-teal);">
         <h2 style="justify-content: center; color: var(--bsc-teal);"><svg style="fill:var(--bsc-teal);"><use href="#i-check-circle"/></svg> That's a Wrap on Homework</h2>
         <p style="margin-bottom: 12px;">Great work this week. On Friday, we'll come back together to talk through your experience.</p>
-        <a class="feedback-btn" onclick="showPage('retro')" style="cursor:pointer; background: linear-gradient(135deg, var(--bsc-teal), #005a54);">Go to Friday: Retro <svg><use href="#i-arrow-right"/></svg></a>
+        <a class="feedback-btn" onclick="showPage('retro')" style="cursor:pointer; background: linear-gradient(135deg, var(--bsc-teal), #005a54);">Go to Friday: Debrief <svg><use href="#i-arrow-right"/></svg></a>
       </div>
     </div>
   </div>
 
   <!-- ==================== RETRO ==================== -->
   <div class="page" id="page-retro">
-    <div class="section-hero retro"><h1><svg><use href="#i-chat"/></svg> Friday Retro</h1><p>Let's come back together to reflect on the week and talk about what we learned.</p></div>
+    <div class="section-hero retro"><h1><svg><use href="#i-chat"/></svg> Friday Debrief</h1><p>Let's come back together to reflect on the week and talk about what we learned.</p></div>
     <div class="content">
       <div class="card">
         <h2><svg style="fill:var(--bsc-teal);"><use href="#i-target"/></svg> What This Session Is About</h2>
-        <p>This is your chance to share your honest experience with the CardioConnect tools. Remember — <strong>these tools are still being built.</strong> Nothing is set in stone. The whole point of this week was to put them in your hands so we can learn what's working and what needs to change before they go live.</p>
+        <p>This is your chance to share your honest experience with the CardioConnect tools. Remember — <strong>these tools are still being built.</strong> The goal for this week was to get CardioConnect in your hands so we can learn what's working and what needs to change.</p>
         <br><p>There are no wrong answers. If something felt off, confusing, or unnecessary — that's exactly what we need to hear.</p>
       </div>
 
@@ -1618,14 +1754,14 @@
         <div class="retro-prompt" style="border-left-color: var(--bsc-blue);" onclick="toggleRetroPrompt(this)">
           <div class="retro-prompt-header">
             <div class="retro-prompt-header-left">
-              <h3 style="color: var(--bsc-blue);"><svg style="fill:var(--bsc-blue);"><use href="#i-megaphone"/></svg> <span class="retro-prompt-step">4</span> Rollout Readiness</h3>
+              <h3 style="color: var(--bsc-blue);"><svg style="fill:var(--bsc-blue);"><use href="#i-megaphone"/></svg> <span class="retro-prompt-step">4</span> Launch Readiness</h3>
             </div>
             <div class="retro-prompt-toggle"><svg><use href="#i-chevron-down"/></svg></div>
           </div>
           <div class="retro-prompt-body">
             <p>Thinking about the broader field team and what's ahead:</p>
             <ul>
-              <li>On a scale of 1–10, how ready does this feel for a wider rollout?</li>
+              <li>On a scale of 1–10, how ready does this feel for a wider launch?</li>
               <li>What would need to be true for your team to adopt this confidently?</li>
               <li>What training or support would people need?</li>
             </ul>
@@ -1869,7 +2005,7 @@
       id: 'dashboard', type: 'dashboard',
       badgeIcon: '#i-chart', badge: 'Reports & Dashboard', name: 'The Dashboard',
       subtitle: '"Where you see the bigger picture"',
-      desc: 'Gives managers and leaders visibility into what\'s happening across a territory or region — designed especially for Territory Managers.',
+      desc: 'Gives the field visibility into what\'s happening across a territory or region. Leaders can see trends, gaps, and coverage issues, while reps can see how their work fits into the bigger picture.',
       bullets: ['Track <strong>case volume, coverage, and completion</strong>','Spot <strong>gaps, bottlenecks, or trends</strong>','Support <strong>territory planning</strong> with real data'],
       takeaway: '✦ Leaders see where to step in, and teams stay aligned on priorities.',
       linkText: 'Open Dashboard (placeholder)', linkIcon: '#i-external',
