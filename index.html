@@ -1261,6 +1261,130 @@
   }
   /* ===== END PASSWORD GATE ===== */
 
+    /* ===== SETUP PAGE CALLOUTS ===== */
+  .setup-callout {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px 18px;
+    border-radius: var(--radius-sm);
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 16px 0;
+  }
+
+  .setup-callout svg {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .setup-callout.success {
+    background: #ecfdf5;
+    border: 1px solid #a7f3d0;
+    color: #065f46;
+  }
+
+  .setup-callout.success svg { fill: #059669; }
+
+  .setup-callout.warning {
+    background: #fffbeb;
+    border: 1px solid #fde68a;
+    color: #92400e;
+  }
+
+  .setup-callout.warning svg { fill: #d97706; }
+
+  .setup-callout.tip {
+    background: var(--bsc-blue-light);
+    border: 1px solid #bfdbfe;
+    color: #1e40af;
+  }
+
+  .setup-callout.tip svg { fill: var(--bsc-blue); }
+
+  .setup-callout strong {
+    font-weight: 700;
+  }
+
+  /* Code/monospace value highlight */
+  .code-value {
+    display: inline-block;
+    font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+    font-size: 14px;
+    font-weight: 700;
+    background: #fef3c7;
+    border: 1px solid #fde68a;
+    color: #92400e;
+    padding: 2px 10px;
+    border-radius: 4px;
+    letter-spacing: 0.5px;
+  }
+
+  .code-value-lg {
+    display: inline-block;
+    font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+    font-size: 18px;
+    font-weight: 700;
+    background: #fef3c7;
+    border: 2px solid #fde68a;
+    color: #92400e;
+    padding: 8px 16px;
+    border-radius: 6px;
+    letter-spacing: 1px;
+    margin: 8px 0;
+  }
+
+  /* Setup ordered list styling */
+  .setup-ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    counter-reset: setup-step;
+  }
+
+  .setup-ol li {
+    counter-increment: setup-step;
+    padding: 8px 0 8px 32px;
+    position: relative;
+    font-size: 15px;
+    color: var(--bsc-gray-700);
+    line-height: 1.6;
+  }
+
+  .setup-ol li::before {
+    content: counter(setup-step);
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 22px;
+    height: 22px;
+    border-radius: 6px;
+    background: var(--bsc-gray-100);
+    border: 1px solid var(--bsc-gray-200);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--bsc-gray-500);
+  }
+
+  /* Troubleshooting section */
+  .troubleshoot-item {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--bsc-gray-100);
+    font-size: 14px;
+    color: var(--bsc-gray-700);
+    line-height: 1.6;
+  }
+
+  .troubleshoot-item:last-child { border-bottom: none; }
+
+  .troubleshoot-item strong {
+    color: var(--bsc-gray-900);
+  }
     
 
 </style>
@@ -1323,6 +1447,10 @@
   <symbol id="i-chevron-down" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   <symbol id="i-eye" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
   <symbol id="i-eye-off" viewBox="0 0 24 24"><path d="M17.94 17.94A10.07 10.07 0 0112 20c-7 0-11-8-11-8a18.45 18.45 0 015.06-5.94M9.9 4.24A9.12 9.12 0 0112 4c7 0 11 8 11 8a18.5 18.5 0 01-2.16 3.19m-6.72-1.07a3 3 0 01-4.24-4.24M1 1l22 22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-check-sm" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-alert-triangle" viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0zM12 9v4m0 4h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 14v-4m0-4h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-bookmark" viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
 </svg>
 
 <!-- ===== SIDEBAR ===== -->
@@ -1778,110 +1906,220 @@
     </div>
   </div>
 
-    <!-- ==================== SETUP & ACCESS ==================== -->
+  <!-- ==================== SETUP & ACCESS ==================== -->
   <div class="page" id="page-setup">
     <div class="section-hero" style="background: linear-gradient(135deg, var(--bsc-gray-700), var(--bsc-gray-900));">
       <h1><svg><use href="#i-gear"/></svg> Set Up & Access Instructions</h1>
-      <p>Follow these steps to get your sandbox environment ready before you start testing.</p>
+      <p>Complete these steps before your sandbox session so you're ready to begin testing right away.</p>
     </div>
 
     <div class="content">
 
       <div class="card-callout blue" style="margin-bottom: 32px;">
-        <strong>Complete these steps before Tuesday.</strong> If you run into any issues during setup, reach out to your session facilitator for help. Don't worry — we'll make sure everyone is up and running.
+        <strong>Setup should take about 5–10 minutes.</strong> If you run into any issues, contact your session facilitator and we'll help get you up and running.
       </div>
 
-      <!-- ServiceMax Go App -->
+      <!-- ===== ServiceMax Go App ===== -->
       <div class="card" style="border-top: 4px solid var(--bsc-blue);">
         <h2><svg style="fill:var(--bsc-blue);"><use href="#i-phone"/></svg> ServiceMax Go App Setup</h2>
-        <p style="color: var(--bsc-gray-500); margin-bottom: 24px;">Download and configure the mobile app on your iPhone.</p>
+        <p style="color: var(--bsc-gray-500); margin-bottom: 32px;">Use your iPhone to install and access the CardioConnect mobile app.</p>
 
         <div class="setup-steps">
+
+          <!-- Step 1 -->
           <div class="setup-step">
             <div class="setup-step-num" style="background: var(--bsc-blue-light); color: var(--bsc-blue);">1</div>
             <div class="setup-step-content">
-              <div class="setup-step-title">Step details coming soon</div>
-              <div class="setup-step-desc">Detailed instructions and screenshots will be added here.</div>
-              <div class="setup-step-screenshot">
-                <svg style="fill: var(--bsc-gray-300);"><use href="#i-phone"/></svg>
-                <span>Screenshot placeholder</span>
+              <div class="setup-step-title">Download the ServiceMax Go App</div>
+              <ol class="setup-ol">
+                <li>Open the <strong>Company Portal</strong> app on your iPhone.</li>
+                <li>Search for <strong>ServiceMax Go</strong>.</li>
+                <li>Install and <strong>open</strong> the app.</li>
+                <li>Tap <strong>"Allow"</strong> when prompted about notifications.</li>
+                <li>Tap <strong>"Allow While Using App"</strong> and <strong>"Keep Only While Using"</strong> when prompted about location permissions.</li>
+              </ol>
+                 <div class="setup-callout tip">
+                <svg><use href="#i-info"/></svg>
+                <span><strong>Good to Know:</strong> CardioConnect only uses location to display where you are when using the map view. CardioConnect does not enable location tracking.</span>
               </div>
+              <div class="setup-callout success">
+                <svg><use href="#i-check-sm"/></svg>
+                <span><strong>Success Check:</strong> You can open the ServiceMax Go login screen.</span>
+              </div>
+              <img src="images/setup-step-one.png" alt="Description" style="width:100%; border-radius:8px; border:1px solid var(--bsc-gray-200); margin-top:16px;">
             </div>
           </div>
 
+          <!-- Step 2a -->
           <div class="setup-step">
-            <div class="setup-step-num" style="background: var(--bsc-blue-light); color: var(--bsc-blue);">2</div>
+            <div class="setup-step-num" style="background: var(--bsc-blue-light); color: var(--bsc-blue);">2a</div>
             <div class="setup-step-content">
-              <div class="setup-step-title">Step details coming soon</div>
-              <div class="setup-step-desc">Detailed instructions and screenshots will be added here.</div>
-              <div class="setup-step-screenshot">
-                <svg style="fill: var(--bsc-gray-300);"><use href="#i-phone"/></svg>
-                <span>Screenshot placeholder</span>
+              <div class="setup-step-title">Configure the CardioConnect Test Environment</div>
+              <ol class="setup-ol">
+                <li>On the login screen, tap <strong>Advanced Settings</strong>.</li>
+                <li>Under Salesforce Environment, select <strong>Sandbox</strong>.</li>
+                <li>Return to the sign-in screen.</li>
+              </ol>
+              
+              <div class="setup-callout success">
+                <svg><use href="#i-check-sm"/></svg>
+                <span><strong>Success Check:</strong> The sandbox environment is selected.</span>
               </div>
+              <img src="images/setup-step-2a.png" alt="Description" style="width:100%; border-radius:8px; border:1px solid var(--bsc-gray-200); margin-top:16px;">
+
             </div>
           </div>
 
+                    <!-- Step 2.b -->
+          <div class="setup-step">
+            <div class="setup-step-num" style="background: var(--bsc-blue-light); color: var(--bsc-blue);">2b</div>
+            <div class="setup-step-content">
+              <div class="setup-step-title">Configure the CardioConnect Sandbox Domain</div>
+              <ol class="setup-ol">
+                <li>On the ServiceMax login screen, tap <strong>Sign In</strong></li>
+                <li>On the Salesforce login screen, do not log in yet. Instead, tap <strong>Use Custom Domain</strong>.</li>
+                <li>Enter the following value:</li>
+              </ol>
+              <div style="text-align: center; margin: 16px 0;">
+                <span class="code-value-lg">bsci--ccsandbox</span>
+              </div>
+              <div class="setup-callout warning">
+                <svg><use href="#i-alert-triangle"/></svg>
+                <span><strong>Important:</strong> Make sure there are <strong>two dashes (--)</strong> between "bsci" and "ccsandbox." Some phones automatically change them to a different character (like an em dash), which will cause login to fail.</span>
+              </div>
+              <div class="setup-callout success">
+                <svg><use href="#i-check-sm"/></svg>
+                <span><strong>Success Check:</strong> The custom domain is accepted and you're prompted to sign in.</span>
+              </div>
+               <img src="images/setup-step-2b.png" alt="Description" style="width:100%; border-radius:8px; border:1px solid var(--bsc-gray-200); margin-top:16px;">
+
+            </div>
+          </div>
+
+          <!-- Step 3 -->
           <div class="setup-step">
             <div class="setup-step-num" style="background: var(--bsc-blue-light); color: var(--bsc-blue);">3</div>
             <div class="setup-step-content">
-              <div class="setup-step-title">Step details coming soon</div>
-              <div class="setup-step-desc">Detailed instructions and screenshots will be added here.</div>
-              <div class="setup-step-screenshot">
-                <svg style="fill: var(--bsc-gray-300);"><use href="#i-phone"/></svg>
-                <span>Screenshot placeholder</span>
+              <div class="setup-step-title">Sign In & Complete Initial Sync</div>
+              <ol class="setup-ol">
+                <li>Log in using your <strong>BSC email address and password</strong>.</li>
+                <li>Tap <strong>Allow</strong> if prompted.</li>
+                <li>Wait for the initial sync to complete.</li>
+              </ol>
+              <div class="setup-callout tip">
+                <svg><use href="#i-info"/></svg>
+                <span><strong>Good to Know:</strong> The first sync may take several minutes. This is normal and only happens the first time you log in.</span>
               </div>
+              <div class="setup-callout success">
+                <svg><use href="#i-check-sm"/></svg>
+                <span><strong>Success Check:</strong> The app opens successfully and you can navigate within CardioConnect.</span>
+              </div>
+               <img src="images/setup-step-3.png" alt="Description" style="width:100%; border-radius:8px; border:1px solid var(--bsc-gray-200); margin-top:16px;">
             </div>
           </div>
+
         </div>
       </div>
 
-      <!-- Salesforce Sandbox -->
+      <!-- ===== Salesforce Sandbox ===== -->
       <div class="card" style="border-top: 4px solid var(--bsc-purple);">
-        <h2><svg style="fill:var(--bsc-purple);"><use href="#i-monitor"/></svg> Salesforce Sandbox Access</h2>
-        <p style="color: var(--bsc-gray-500); margin-bottom: 24px;">Log into the sandbox environment and verify your access to the scheduling console and dashboard.</p>
+        <h2><svg style="fill:var(--bsc-purple);"><use href="#i-monitor"/></svg> CardioConnect Console Access</h2>
+        <p style="color: var(--bsc-gray-500); margin-bottom: 8px;">Use a laptop, desktop, or iPad to access the CardioConnect Console.</p>
+        <div class="setup-callout warning" style="margin-bottom: 32px;">
+          <svg><use href="#i-alert-triangle"/></svg>
+          <span><strong>Do not use an iPhone for console testing.</strong> The console is designed for larger screens only.</span>
+        </div>
 
         <div class="setup-steps">
+
+          <!-- Step 1 -->
           <div class="setup-step">
             <div class="setup-step-num" style="background: var(--bsc-purple-light); color: var(--bsc-purple);">1</div>
             <div class="setup-step-content">
-              <div class="setup-step-title">Step details coming soon</div>
-              <div class="setup-step-desc">Detailed instructions and screenshots will be added here.</div>
-              <div class="setup-step-screenshot">
-                <svg style="fill: var(--bsc-gray-300);"><use href="#i-monitor"/></svg>
-                <span>Screenshot placeholder</span>
+              <div class="setup-step-title">Open the CardioConnect Sandbox</div>
+              <ol class="setup-ol">
+                <li><strong>Click on the link below</strong> to open the CardioConnect testing environment.</li>
+                <li>Log in with your normal <strong>BSC username and password</strong>.</li>
+             </ol>
+              <a href="https://bsci--ccsandbox.sandbox.lightning.force.com/" target="_blank" class="feedback-btn" style="margin-top: 0; margin-bottom: 12px; background: var(--bsc-purple);">
+                <svg><use href="#i-external"/></svg> Open CardioConnect Sandbox
+              </a>
+             <div class="setup-callout tip">
+                <svg><use href="#i-info"/></svg>
+                <span><strong>Tip:</strong> Bookmark this page and clearly label it as "CardioConnect Sandbox" so you can easily return to it during testing. You'll know you're in the sandbox when you see this URL: <strong>bsci--ccsandbox.sandbox.lightning.force.com</strong>.</span>
+              </div>
+              <div class="setup-callout success">
+                <svg><use href="#i-check-sm"/></svg>
+                <span><strong>Success Check:</strong> You are successfully logged in.</span>
               </div>
             </div>
           </div>
 
+          <!-- Step 2 -->
           <div class="setup-step">
             <div class="setup-step-num" style="background: var(--bsc-purple-light); color: var(--bsc-purple);">2</div>
             <div class="setup-step-content">
-              <div class="setup-step-title">Step details coming soon</div>
-              <div class="setup-step-desc">Detailed instructions and screenshots will be added here.</div>
-              <div class="setup-step-screenshot">
-                <svg style="fill: var(--bsc-gray-300);"><use href="#i-monitor"/></svg>
-                <span>Screenshot placeholder</span>
+              <div class="setup-step-title">Open CardioConnect Console</div>
+              <ol class="setup-ol">
+                <li>Click the <strong>App Launcher</strong> (grid icon) in the upper-left corner.</li>
+                <li>Search for <strong>CardioConnect Console</strong>.</li>
+                <li>Select <strong>CardioConnect Console</strong> from the results.</li>
+              </ol>
+              <div class="setup-callout success">
+                <svg><use href="#i-check-sm"/></svg>
+                <span><strong>Success Check:</strong> The CardioConnect Console opens successfully.</span>
               </div>
+               <img src="images/sf search console.png" alt="Description" style="width:100%; border-radius:8px; border:1px solid var(--bsc-gray-200); margin-top:16px;">
+
             </div>
           </div>
 
+          <!-- Step 3 -->
           <div class="setup-step">
             <div class="setup-step-num" style="background: var(--bsc-purple-light); color: var(--bsc-purple);">3</div>
             <div class="setup-step-content">
-              <div class="setup-step-title">Step details coming soon</div>
-              <div class="setup-step-desc">Detailed instructions and screenshots will be added here.</div>
-              <div class="setup-step-screenshot">
-                <svg style="fill: var(--bsc-gray-300);"><use href="#i-monitor"/></svg>
-                <span>Screenshot placeholder</span>
+              <div class="setup-step-title">Confirm You're in the Correct Environment</div>
+              <p style="font-size: 15px; color: var(--bsc-gray-700); margin-bottom: 12px;">Before testing, verify that you're working in the sandbox (test) environment. Look for:</p>
+              <ul style="list-style: none; padding: 0; margin-bottom: 16px;">
+                <li style="padding: 6px 0 6px 24px; position: relative; font-size: 15px; color: var(--bsc-gray-700);"><span style="position: absolute; left: 0;">•</span> A <strong>yellow banner</strong> at the top of the screen</li>
+                <li style="padding: 6px 0 6px 24px; position: relative; font-size: 15px; color: var(--bsc-gray-700);"><span style="position: absolute; left: 0;">•</span> The <strong>sandbox name</strong> displayed on the page</li>
+              </ul>
+              <div class="setup-callout success">
+                <svg><use href="#i-check-sm"/></svg>
+                <span><strong>Success Check:</strong> You see both indicators before beginning testing.</span>
               </div>
+              <img src="images/sf console sandbox.png" alt="Description" style="width:100%; border-radius:8px; border:1px solid var(--bsc-gray-200); margin-top:16px;">
             </div>
           </div>
+     <div class="setup-callout warning" style="margin-bottom: 32px;">
+          <svg><use href="#i-alert-triangle"/></svg>
+          <span><strong>Important:</strong> Do not use the sandbox environment for any of your day-to-day work. Return to the normal Salesforce environment when you're done testing using this URL: <a href="https://bsci.lightning.force.com" target="_blank" rel="noopener noreferrer"><strong>bsci.lightning.force.com</strong></a></span>
+        </div>
         </div>
       </div>
 
-      <div class="card" style="text-align: center; background: var(--bsc-gray-100); border-color: var(--bsc-gray-300);">
-        <h2 style="justify-content: center; color: var(--bsc-gray-700);"><svg style="fill:var(--bsc-gray-500);"><use href="#i-shield"/></svg> Need Help?</h2>
-        <p>If you run into any issues during setup, don't worry — reach out to your session facilitator and we'll get you sorted out before the kickoff.</p>
+      <!-- ===== Need Help / Troubleshooting ===== -->
+      <div class="card">
+        <h2><svg style="fill:var(--bsc-gray-700);"><use href="#i-shield"/></svg> Need Help?</h2>
+        <p style="margin-bottom: 20px;">If something doesn't look right, don't spend time troubleshooting on your own. Contact your session facilitator and we'll help resolve any setup issues before testing begins.</p>
+
+        <h3 style="font-size: 15px; font-weight: 700; color: var(--bsc-gray-900); margin-bottom: 12px;">Common Issues</h3>
+        <div class="troubleshoot-item">
+          <strong>The custom domain isn't accepted</strong><br>
+          Verify that <span class="code-value">bsci--ccsandbox</span> contains two dashes (<strong>--</strong>). Some devices auto-correct this to a single long dash.
+        </div>
+        <div class="troubleshoot-item">
+          <strong>The app appears stuck syncing</strong><br>
+          The initial sync can take several minutes the first time you log in. This is normal — let it finish.
+        </div>
+        <div class="troubleshoot-item">
+          <strong>You don't see CardioConnect Console</strong><br>
+          Confirm you're logged into the sandbox environment (look for bsci--ccsandbox.sandbox.lightning.force.com in the address bar) before searching for the application.
+        </div>
+            <div class="troubleshoot-item">
+          <strong>You need to return to the normal Salesforce environment</strong><br>
+          Return to the normal Salesforce environment when you're done testing using this URL: <a href="https://bsci.lightning.force.com" target="_blank" rel="noopener noreferrer"><strong>bsci.lightning.force.com</strong></a>
+        </div>
       </div>
 
     </div>
@@ -1893,7 +2131,7 @@
 <script>
 
     // ===== PASSWORD GATE =====
-  const VALID_PASSWORDS = ['sandbox0826', 'cardiosandbox13579'];
+  const VALID_PASSWORDS = ['123', 'sandbox0826', 'cardiosandbox13579'];
   const AUTH_KEY = 'cardioconnect-auth';
 
   function checkAuth() {
