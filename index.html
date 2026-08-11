@@ -1695,10 +1695,11 @@
     <div class="content">
       <div class="card day-card tuesday">
         <div class="day-label">Day 1 of Homework</div>
-               <div class="day-scenario"><strong>Scenario:</strong> It's the start of your week. Set up your schedule the way you normally would — using real accounts, real physicians, and real details from your day-to-day work. <br><br>Remember: you're creating work orders — planned placeholders for cases this week. They don't need to be perfect or complete. Add what you know.</div>
+               <div class="day-scenario"><strong>Scenario:</strong> It's the start of your week. Set up your schedule the way you normally would — using real accounts, real physicians, and real details from your day-to-day work. <br><br>Remember: you're creating work orders — planned <em>future</em> placeholders for cases this week. They don't need to be perfect or complete. Add what you know.</div>
        <h3 style="margin-top: 8px; margin-bottom: 12px; color: var(--bsc-teal);">Add Cases and Events</h3>  
                <ul class="task-list">
-          <li class="task-item"><input type="checkbox" class="task-checkbox" data-task="tue-1" onchange="toggleTask(this)"><span class="task-text">Add <strong>2 real procedures per day</strong> this week — leave at least <strong>4 unassigned</strong> <!--<span class="task-role-tag all">All Roles</span></span>--></li>
+          <li class="task-item"><input type="checkbox" class="task-checkbox" data-task="tue-1" onchange="toggleTask(this)"><span class="task-text">Add <strong>2 procedures per day</strong> this week — leave at least <strong>4 unassigned</strong> <!--<span class="task-role-tag all">All Roles</span></span>--></li>
+          <li class="task-item"><input type="checkbox" class="task-checkbox" data-task="tue-1" onchange="toggleTask(this)"><span class="task-text"><span class="task-role-tag all">CRM Only</span> Go to PMR in the Salesforce Sandbox, search for the patient named "Test Patient", and <strong>add 1 procedure</strong> for them this week </span></li>
           <li class="task-item"><input type="checkbox" class="task-checkbox" data-task="tue-2" onchange="toggleTask(this)"><span class="task-text">Add <strong>3 non-procedure activities</strong> (e.g., in-service, device check, clinic) <!--<span class="task-role-tag all">All Roles</span></span>--></li>
           <li class="task-item"><input type="checkbox" class="task-checkbox" data-task="tue-3" onchange="toggleTask(this)"><span class="task-text">Add <strong>1 personal/unavailable time block</strong> (PTO, OOT, etc.) <!--<span class="task-role-tag all">All Roles</span></span>--></li>
         </ul>
@@ -1737,20 +1738,21 @@
     <div class="content">
       <div class="card day-card wednesday">
         <div class="day-label">Day 2 of Homework</div>
-              <div class="day-scenario"><strong>Scenario:</strong> Your schedule is changing — coverage gaps have appeared, cases need to move, and your team needs to stay in sync. Make the updates to keep everything on track. <br><br>Some of the work orders from yesterday may still be unassigned — that's by design. Part of today is making sure everything has coverage.</div>
+              <div class="day-scenario"><strong>Scenario:</strong> Your schedule is changing — coverage gaps have appeared, cases need to move, and your team needs to stay in sync. Make the updates to keep everything on track. <br><br>Some of the work orders added by you and your team yesterday may still be unassigned — that's by design. Part of today is making sure everything has coverage.</div>
        <h3 style="margin-top: 8px; margin-bottom: 12px; color: var(--bsc-teal);">1. Build Your Schedule in the Console</h3> 
               <ul class="task-list">
-          <li class="task-item"><input type="checkbox" class="task-checkbox" data-task="wed-1" onchange="toggleTask(this)"><span class="task-text">Ensure <strong>all cases this week are assigned</strong> <!--<span class="task-role-tag all">All Roles</span></span>--></li>
-          <li class="task-item"><input type="checkbox" class="task-checkbox" data-task="wed-2" onchange="toggleTask(this)"><span class="task-text"><strong>Reassign at least 1 case</strong> to another rep <!--<span class="task-role-tag all">All Roles</span></span>--></li>
-          <li class="task-item"><input type="checkbox" class="task-checkbox" data-task="wed-5" onchange="toggleTask(this)"><span class="task-text"><strong>Identify any conflicts or gaps</strong> in coverage <!--<span class="task-role-tag all">All Roles</span></span>--></li>
-          <li class="task-item"><input type="checkbox" class="task-checkbox" data-task="wed-6" onchange="toggleTask(this)"><span class="task-text"><strong>Add a secondary rep</strong> to at least 1 procedure <!--<span class="task-role-tag all">All Roles</span></span>--></li>
+          <li class="task-item"><input type="checkbox" class="task-checkbox" data-task="wed-1" onchange="toggleTask(this)"><span class="task-text"><span class="task-role-tag cm">CM & TM Only</span> Ensure <strong>all cases this week are assigned</strong> </span> </li>
+          <li class="task-item"><input type="checkbox" class="task-checkbox" data-task="wed-2" onchange="toggleTask(this)"><span class="task-text"><!--<span class="task-role-tag all">All Roles</span>--> <strong>Reassign at least 1 future case</strong> to another rep </span></li>
+          <li class="task-item"><input type="checkbox" class="task-checkbox" data-task="wed-5" onchange="toggleTask(this)"><span class="task-text"><!--<span class="task-role-tag all">All Roles</span>--> Create and resolve a <strong>time conflict</strong></span></li>
+          <li class="task-item"><input type="checkbox" class="task-checkbox" data-task="wed-6" onchange="toggleTask(this)"><span class="task-text"><!--<span class="task-role-tag all">All Roles</span>--> <strong>Add a secondary rep</strong> to at least 1 future procedure </span></li>
+          <li class="task-item"><input type="checkbox" class="task-checkbox" data-task="wed-6" onchange="toggleTask(this)"><span class="task-text"><!--<span class="task-role-tag all">All Roles</span>--> <strong>Add a trainee</strong> to at least 1 future procedure</span></li>
         </ul>
           <h3 style="margin-top: 24px; margin-bottom: 12px; color: var(--bsc-teal);">2. Make Scheduling Updates in the Go App</h3> 
               <ul class="task-list">
-          <li class="task-item"><input type="checkbox" class="task-checkbox" data-task="wed-2" onchange="toggleTask(this)"><span class="task-text"><strong>Reassign at least 1 case</strong> to another rep <!--<span class="task-role-tag all">All Roles</span></span>--></li>
-          <li class="task-item"><input type="checkbox" class="task-checkbox" data-task="wed-3" onchange="toggleTask(this)"><span class="task-text"><strong>Adjust the timing or details</strong> of an existing future case <!--<span class="task-role-tag all">All Roles</span></span>--></li>
-          <li class="task-item"><input type="checkbox" class="task-checkbox" data-task="wed-4" onchange="toggleTask(this)"><span class="task-text">Review your <strong>team's schedule</strong> <!--<span class="task-role-tag all">All Roles</span></span>--></li>
-          <li class="task-item"><input type="checkbox" class="task-checkbox" data-task="wed-6" onchange="toggleTask(this)"><span class="task-text"><strong>Add a trainee</strong> to at least 1 future procedure <!--<span class="task-role-tag all">All Roles</span></span>--></li>
+          <li class="task-item"><input type="checkbox" class="task-checkbox" data-task="wed-2" onchange="toggleTask(this)"><span class="task-text"><!--<span class="task-role-tag all">All Roles</span>--> <strong>Reassign at least 1 future case</strong> to another rep </span></li>
+          <li class="task-item"><input type="checkbox" class="task-checkbox" data-task="wed-3" onchange="toggleTask(this)"><span class="task-text"><!--<span class="task-role-tag all">All Roles</span>--><strong>Adjust the timing or details</strong> of an existing future case </span></li>
+          <li class="task-item"><input type="checkbox" class="task-checkbox" data-task="wed-4" onchange="toggleTask(this)"><span class="task-text"><!--<span class="task-role-tag all">All Roles</span>-->Review your <strong>team's schedule</strong> </span></li>
+          <li class="task-item"><input type="checkbox" class="task-checkbox" data-task="wed-6" onchange="toggleTask(this)"><span class="task-text"><!--<span class="task-role-tag all">All Roles</span>--><strong>Add a trainee</strong> to at least 1 future procedure</span></li>
         </ul>
         <div class="day-note"><svg><use href="#i-pin"/></svg><span><strong>Tip:</strong> Test out all the ways to make updates and scheduling adjustments in both the <strong>Go App</strong> and the <strong>Console</strong> so you experience all the features of both tools.</span></div>
         <a href="https://urldefense.com/v3/__https://forms.office.com/Pages/ResponsePage.aspx?id=g7S4tZdV50qOJ_zEZKO1hP79VAwNcEVGiCUoqQe2ZIFUMkMwQlRHQkZaUzBPNExTNFhKRUhNUFZLTi4u__;!!Jrgwm_wKFTPpVg!IJMrXwc5bQuW6tVK2oeAiwX_mA6I-dje26FcjqbUO0GdeSG5riKjdW11VsYzmQJYT3mHWDhnXU3E3tYd067qEXGv$" class="feedback-btn" target="_blank"><svg><use href="#i-clipboard"/></svg> Share Your Feedback (Wednesday)</a>
@@ -1790,19 +1792,17 @@
               <div class="day-scenario"><strong>Scenario:</strong> It's a busy day — last-minute changes are coming in, cases need to be handed off, and you need to close things out. Handle the changes, complete your work, and review how the week went. <br><br>One of today's tasks involves creating a procedure worksheet for a completed case — this only applies to AFS. You'll do this from within the work order itself. The work order is the plan, the procedure worksheet is the final record.</div>
         <h3 style="margin-top: 8px; margin-bottom: 12px; color: var(--bsc-teal);">1. Handle a last-minute change</h3>
         <ul class="task-list">
-          <li class="task-item"><input type="checkbox" class="task-checkbox" data-task="thu-1" onchange="toggleTask(this)"><span class="task-text"><strong>Unassign yourself</strong> from an upcoming case <!--<span class="task-role-tag clinical">Clinical</span></span>--></li>
-          <li class="task-item"><input type="checkbox" class="task-checkbox" data-task="thu-2" onchange="toggleTask(this)"><span class="task-text">Reassign an urgent case using <strong>resource recommendations</strong>  <!--<span class="task-role-tag cm">CM</span></span>--></li>
-          <li class="task-item"><input type="checkbox" class="task-checkbox" data-task="thu-3" onchange="toggleTask(this)"><span class="task-text">Add a <strong>last-minute case</strong> <!--<span class="task-role-tag tm">TM</span></span>--></li>
+          <li class="task-item"><input type="checkbox" class="task-checkbox" data-task="thu-3" onchange="toggleTask(this)"><span class="task-text"><strong>Edit the start time</strong> of a procedure on the schedule for today  <!--<span class="task-role-tag tm">TM</span></span>--></li>
+          <li class="task-item"><input type="checkbox" class="task-checkbox" data-task="thu-1" onchange="toggleTask(this)"><span class="task-text"><span class="task-role-tag clinical">Clinical Only</span> <strong>Unassign yourself</strong> from an upcoming case today</span></li>
+          <li class="task-item"><input type="checkbox" class="task-checkbox" data-task="thu-2" onchange="toggleTask(this)"><span class="task-text">Assign or reassign an urgent case using <strong>resource recommendations</strong>  <!--<span class="task-role-tag cm">CM</span></span>--></li>
+          <li class="task-item"><input type="checkbox" class="task-checkbox" data-task="thu-3" onchange="toggleTask(this)"><span class="task-text">Add a <strong>last-minute case</strong> starting within the next 2 hours <!--<span class="task-role-tag tm">TM</span></span>--></li>
+          
         </ul>
         <h3 style="margin-top: 24px; margin-bottom: 12px; color: var(--bsc-teal);">2. Close out a case</h3>
         <ul class="task-list">
-          <li class="task-item"><input type="checkbox" class="task-checkbox" data-task="thu-4" onchange="toggleTask(this)"><span class="task-text">Create a <strong>procedure record</strong> for a case "completed" earlier this week <span class="task-role-tag all">AFS Only</span></span></li>
+          <li class="task-item"><input type="checkbox" class="task-checkbox" data-task="thu-4" onchange="toggleTask(this)"><span class="task-text"><span class="task-role-tag all">AFS Only</span> Create a <strong>procedure record</strong> for a case that was scheduled for yesterday </span></li>
         </ul>
-        <h3 style="margin-top: 24px; margin-bottom: 12px; color: var(--bsc-teal);">3. Review the dashboard</h3>
-        <ul class="task-list">
-          <li class="task-item"><input type="checkbox" class="task-checkbox" data-task="thu-5" onchange="toggleTask(this)"><span class="task-text">Look at <strong>upcoming or completed cases</strong> in the dashboard <!--<span class="task-role-tag all">All Roles</span></span>--></li>
-          <li class="task-item"><input type="checkbox" class="task-checkbox" data-task="thu-6" onchange="toggleTask(this)"><span class="task-text">See if you can <strong>spot any trends or gaps</strong> in the data <!--<span class="task-role-tag all">All Roles</span></span>--></li>
-        </ul>
+        
         <a href="https://urldefense.com/v3/__https://forms.office.com/Pages/ResponsePage.aspx?id=g7S4tZdV50qOJ_zEZKO1hP79VAwNcEVGiCUoqQe2ZIFUNk5IVVgxTVdNRzdIWFcyQzdTWktSOUdHMy4u__;!!Jrgwm_wKFTPpVg!IJMrXwc5bQuW6tVK2oeAiwX_mA6I-dje26FcjqbUO0GdeSG5riKjdW11VsYzmQJYT3mHWDhnXU3E3tYd05ylMEZq$" class="feedback-btn" target="_blank"><svg><use href="#i-clipboard"/></svg> Share Your Feedback (Thursday)</a>
       </div>
       <div class="card" style="text-align: center; background: var(--bsc-teal-light); border-color: var(--bsc-teal);">
