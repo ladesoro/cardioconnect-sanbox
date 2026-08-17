@@ -830,6 +830,83 @@
     opacity: 0.5;
   }
 
+  /* ===== IMAGE MODAL LIGHTBOX ===== */
+  .image-modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.25s ease;
+  }
+  .image-modal.active {
+    display: flex;
+  }
+  .image-modal-content {
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bsc-white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-lg);
+    padding: 16px;
+    animation: slideUp 0.3s ease;
+  }
+  @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+  .image-modal-img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    border-radius: var(--radius-sm);
+    display: block;
+  }
+  .image-modal-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: var(--bsc-white);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    transition: all var(--transition);
+    z-index: 2001;
+  }
+  .image-modal-close:hover {
+    background: var(--bsc-gray-50);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    transform: scale(1.1);
+  }
+  .image-modal-close svg {
+    width: 20px;
+    height: 20px;
+    stroke: var(--bsc-gray-900);
+    stroke-width: 2;
+    stroke-linecap: round;
+  }
+  @media (max-width: 640px) {
+    .image-modal-content {
+      max-width: 95vw;
+      max-height: 85vh;
+      padding: 12px;
+    }
+    .image-modal-close {
+      width: 36px;
+      height: 36px;
+    }
+  }
+
   @media (max-width: 900px) {
     .setup-step {
       flex-direction: column;
@@ -1945,7 +2022,7 @@
                 <svg><use href="#i-check-sm"/></svg>
                 <span><strong>Success Check:</strong> You can open the ServiceMax Go login screen.</span>
               </div>
-              <img src="images/setup-step-one.png" alt="Description" style="width:100%; border-radius:8px; border:1px solid var(--bsc-gray-200); margin-top:16px;">
+              <img src="images/setup-step-one.png" alt="Description" data-lightbox="setup" style="width:100%; border-radius:8px; border:1px solid var(--bsc-gray-200); margin-top:16px; cursor:pointer;">
             </div>
           </div>
 
@@ -1964,7 +2041,7 @@
                 <svg><use href="#i-check-sm"/></svg>
                 <span><strong>Success Check:</strong> The sandbox environment is selected.</span>
               </div>
-              <img src="images/setup-step-2a.png" alt="Description" style="width:100%; border-radius:8px; border:1px solid var(--bsc-gray-200); margin-top:16px;">
+              <img src="images/setup-step-2a.png" alt="Description" data-lightbox="setup" style="width:100%; border-radius:8px; border:1px solid var(--bsc-gray-200); margin-top:16px; cursor:pointer;">
 
             </div>
           </div>
@@ -1990,7 +2067,7 @@
                 <svg><use href="#i-check-sm"/></svg>
                 <span><strong>Success Check:</strong> The custom domain is accepted and you're prompted to sign in.</span>
               </div>
-               <img src="images/setup-step-2b.png" alt="Description" style="width:100%; border-radius:8px; border:1px solid var(--bsc-gray-200); margin-top:16px;">
+               <img src="images/setup-step-2b.png" alt="Description" data-lightbox="setup" style="width:100%; border-radius:8px; border:1px solid var(--bsc-gray-200); margin-top:16px; cursor:pointer;">
 
             </div>
           </div>
@@ -2013,7 +2090,7 @@
                 <svg><use href="#i-check-sm"/></svg>
                 <span><strong>Success Check:</strong> The app opens successfully and you can navigate within CardioConnect.</span>
               </div>
-               <img src="images/setup-step-3.png" alt="Description" style="width:100%; border-radius:8px; border:1px solid var(--bsc-gray-200); margin-top:16px;">
+               <img src="images/setup-step-3.png" alt="Description" data-lightbox="setup" style="width:100%; border-radius:8px; border:1px solid var(--bsc-gray-200); margin-top:16px; cursor:pointer;">
             </div>
           </div>
 
@@ -2068,7 +2145,7 @@
                 <svg><use href="#i-check-sm"/></svg>
                 <span><strong>Success Check:</strong> The CardioConnect Console opens successfully.</span>
               </div>
-               <img src="images/setup-console-app-launcher.png" alt="Description" style="width:100%; border-radius:8px; border:1px solid var(--bsc-gray-200); margin-top:16px;">
+               <img src="images/setup-console-app-launcher.png" alt="Description" data-lightbox="setup" style="width:100%; border-radius:8px; border:1px solid var(--bsc-gray-200); margin-top:16px; cursor:pointer;">
 
             </div>
           </div>
@@ -2087,7 +2164,7 @@
                 <svg><use href="#i-check-sm"/></svg>
                 <span><strong>Success Check:</strong> You see both indicators before beginning testing.</span>
               </div>
-              <img src="images/setup-console.png" alt="Description" style="width:100%; border-radius:8px; border:1px solid var(--bsc-gray-200); margin-top:16px;">
+              <img src="images/setup-console.png" alt="Description" data-lightbox="setup" style="width:100%; border-radius:8px; border:1px solid var(--bsc-gray-200); margin-top:16px; cursor:pointer;">
             </div>
           </div>
      <div class="setup-callout warning" style="margin-bottom: 32px;">
@@ -2127,7 +2204,7 @@
                 <svg><use href="#i-check-sm"/></svg>
                 <span><strong>Success Check:</strong> You are back on the log in screen.</span>
               </div>
-              <img src="images/Log out of prod.png" alt="Description" style="width:100%; border-radius:8px; border:1px solid var(--bsc-gray-200); margin-top:16px;">
+              <img src="images/Log out of prod.png" alt="Description" data-lightbox="setup" style="width:100%; border-radius:8px; border:1px solid var(--bsc-gray-200); margin-top:16px; cursor:pointer;">
             </div>
           </div>
 
@@ -2155,7 +2232,7 @@
                 <svg><use href="#i-check-sm"/></svg>
                 <span><strong>Success Check:</strong> You are signed in and see the Salesforce landing page.</span>
               </div>
-              <img src="images/log in to sandbox sf mobile.png" alt="Description" style="width:100%; border-radius:8px; border:1px solid var(--bsc-gray-200); margin-top:16px;">
+              <img src="images/log in to sandbox sf mobile.png" alt="Description" data-lightbox="setup" style="width:100%; border-radius:8px; border:1px solid var(--bsc-gray-200); margin-top:16px; cursor:pointer;">
 
             </div>
           </div>
@@ -2183,7 +2260,7 @@
                 <svg><use href="#i-check-sm"/></svg>
                 <span><strong>Success Check:</strong> You are back in your normal Salesforce app environment.</span>
               </div>
-               <img src="images/log in to prod.png" alt="Description" style="width:100%; border-radius:8px; border:1px solid var(--bsc-gray-200); margin-top:16px;">
+               <img src="images/log in to prod.png" alt="Description" data-lightbox="setup" style="width:100%; border-radius:8px; border:1px solid var(--bsc-gray-200); margin-top:16px; cursor:pointer;">
 
             </div>
           </div>
@@ -2219,6 +2296,18 @@
   </div>
 
 <button class="scroll-top" id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})"><svg><use href="#i-arrow-up"/></svg></button>
+
+<!-- ===== IMAGE MODAL ===== -->
+<div class="image-modal" id="imageModal">
+  <div class="image-modal-content">
+    <img class="image-modal-img" id="modalImage" src="" alt="">
+    <button class="image-modal-close" onclick="closeImageModal()">
+      <svg viewBox="0 0 24 24" fill="none">
+        <path d="M18 6L6 18M6 6l12 12"/>
+      </svg>
+    </button>
+  </div>
+</div>
 </div>
 
 <script>
@@ -2459,14 +2548,55 @@
 
   window.addEventListener('scroll', () => { document.getElementById('scrollTopBtn').classList.toggle('visible', window.scrollY > 300); });
 
+  // ===== IMAGE MODAL LIGHTBOX =====
+  function openImageModal(imageSrc) {
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImage');
+    modalImg.src = imageSrc;
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeImageModal() {
+    const modal = document.getElementById('imageModal');
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
   document.addEventListener('DOMContentLoaded', () => {
+    // Setup lightbox for all setup images
+    document.querySelectorAll('img[data-lightbox="setup"]').forEach(img => {
+      img.addEventListener('click', function(e) {
+        e.stopPropagation();
+        openImageModal(this.src);
+      });
+    });
+
+    // Close modal when clicking outside the image
+    const imageModal = document.getElementById('imageModal');
+    if (imageModal) {
+      imageModal.addEventListener('click', function(e) {
+        if (e.target === this) {
+          closeImageModal();
+        }
+      });
+    }
+
+    // Close modal with ESC key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeImageModal();
+      }
+    });
+
     loadTasks();
     renderTrack();
     setTimeout(() => renderTrack(), 100);
     setTimeout(() => renderTrack(), 300);
+    checkInitialHash();
   });
 
-    // ===== RETRO ACCORDION SPOTLIGHT =====
+  // ===== RETRO ACCORDION SPOTLIGHT =====
   function toggleRetroPrompt(el) {
     const container = document.getElementById('retroContainer');
     const wasActive = el.classList.contains('active');
@@ -2483,7 +2613,8 @@
       container.classList.add('has-active');
     }
   }
-    function showPage(pageId) {
+
+  function showPage(pageId) {
     document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
     document.getElementById('page-' + pageId)?.classList.add('active');
     document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
@@ -2519,13 +2650,6 @@
     const validPages = ['home', 'kickoff', 'tuesday', 'wednesday', 'thursday', 'retro', 'setup'];
     if (hash && validPages.includes(hash)) {
       showPage(hash);
-        document.addEventListener('DOMContentLoaded', () => {
-    loadTasks();
-    renderTrack();
-    setTimeout(() => renderTrack(), 100);
-    setTimeout(() => renderTrack(), 300);
-    checkInitialHash();
-  });
     }
   }
 </script>
