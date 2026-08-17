@@ -2097,6 +2097,100 @@
         </div>
       </div>
 
+       <!-- ===== Salesforce Mobile App ===== -->
+      <div class="card" style="border-top: 4px solid var(--bsc-blue);">
+        <h2><svg style="fill:var(--bsc-blue);"><use href="#i-phone"/></svg> Salesforce Mobile App Setup</h2>
+        <p style="color: var(--bsc-gray-500); margin-bottom: 32px;">Use your iPhone to log into the Sandbox Environment in the Salesforce mobile app.</p>
+
+        <div class="setup-callout warning" style="margin-bottom: 32px;">
+          <svg><use href="#i-alert-triangle"/></svg>
+          <span><strong>Note:</strong> Using the Sandbox environment in your Salesforce Mobile App is not essential to testing our core CardioConnect tools. However, if you want to replicate and test how CardioConnect will flow into your day-to-day workflows, we advise doing this step. It will make creating work orders from PMR (for CRM) and creating and linking to Procedure Worksheets (for AFS) much smoother in the Sandbox.</a></span>
+        </div>
+
+        <div class="setup-steps">
+
+          <!-- Step 1 -->
+          <div class="setup-step">
+            <div class="setup-step-num" style="background: var(--bsc-blue-light); color: var(--bsc-blue);">1</div>
+            <div class="setup-step-content">
+              <div class="setup-step-title">Log out of the Production (Live) Environment</div>
+              <ol class="setup-ol">
+                <li>Open the <strong>Salesforce</strong> app on your iPhone.</li>
+                <li>Click on the <strong>avatar icon</strong> in the top left corner.</li>
+                <li>Click <strong>Log Out</strong>.</li>
+              </ol>
+                 <div class="setup-callout tip">
+                <svg><use href="#i-info"/></svg>
+                <span><strong>Good to Know:</strong> You will need to remember to log back in to the production environment when you're done testing for your day-to-day work you may do in Salesforce.</span>
+              </div>
+              <div class="setup-callout success">
+                <svg><use href="#i-check-sm"/></svg>
+                <span><strong>Success Check:</strong> You are back on the log in screen.</span>
+              </div>
+              <img src="images/Log out of prod.png" alt="Description" style="width:100%; border-radius:8px; border:1px solid var(--bsc-gray-200); margin-top:16px;">
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="setup-step">
+            <div class="setup-step-num" style="background: var(--bsc-blue-light); color: var(--bsc-blue);">2</div>
+            <div class="setup-step-content">
+              <div class="setup-step-title">Log in to the Sandbox environment</div>
+              <ol class="setup-ol">
+                <li>On the Salesforce login screen, do not log in yet. Click on the <strong>gear icon</strong> in the top right corner.</li>
+                <li>Click <strong>Choose Connection</strong> and select Sandbox.</li>
+                <li>On the log in screen, tap <strong>Use Custom Domain</strong>.</li>
+                <li>Enter the following value and click Continue:</li> <div style="text-align: center; margin: 16px 0;">
+                <span class="code-value-lg">bsci--ccsandbox</span>
+              </div>
+              <li>Enter your <strong>BSC email address and password</strong>.</li>
+              <li><strong>Authenticate</strong> and <strong>Allow Access</strong> when prompted.</li>
+              </ol>
+                        
+     <div class="setup-callout warning" style="margin-bottom: 32px;">
+          <svg><use href="#i-alert-triangle"/></svg>
+          <span><strong>Important:</strong> Make sure there are two dashes (--) between "bsci" and "ccsandbox." Some phones automatically change them to a different character (like a long dash), which will cause login to fail.</span>
+        </div>
+              <div class="setup-callout success">
+                <svg><use href="#i-check-sm"/></svg>
+                <span><strong>Success Check:</strong> You are signed in and see the Salesforce landing page.</span>
+              </div>
+              <img src="images/log in to sandbox sf mobile.png" alt="Description" style="width:100%; border-radius:8px; border:1px solid var(--bsc-gray-200); margin-top:16px;">
+
+            </div>
+          </div>
+
+                    <!-- Step 3 -->
+          <div class="setup-step">
+            <div class="setup-step-num" style="background: var(--bsc-blue-light); color: var(--bsc-blue);">3</div>
+            <div class="setup-step-content">
+              <div class="setup-step-title">Log out of the Sandbox and Back into the Production (Live) environment</div>
+               <ol class="setup-ol">
+                <li>Click on the <strong>avatar icon</strong> in the top left corner.</li>
+                <li>Click <strong>Log Out</strong>.</li>
+                <li>On the Salesforce login screen, do not log in yet. Click on the <strong>gear icon</strong> in the top right corner.</li>
+                <li>Click <strong>Choose Connection</strong> and select <strong>Production – Log in with Username</strong>.</li>
+                <li>On the log in screen, tap <strong>Use Custom Domain</strong>.</li>
+                <li>Enter the following value and click Continue:</li> <div style="text-align: center; margin: 16px 0;">
+                <span class="code-value-lg">bsci</span>
+              </div>
+              <li>Enter your <strong>BSC email address and password</strong>.</li>
+              <li><strong>Authenticate</strong> and <strong>Allow Access</strong> when prompted.</li>
+              </ol>
+
+            
+              <div class="setup-callout success">
+                <svg><use href="#i-check-sm"/></svg>
+                <span><strong>Success Check:</strong> You are back in your normal Salesforce app environment.</span>
+              </div>
+               <img src="images/log in to prod.png" alt="Description" style="width:100%; border-radius:8px; border:1px solid var(--bsc-gray-200); margin-top:16px;">
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
       <!-- ===== Need Help / Troubleshooting ===== -->
       <div class="card">
         <h2><svg style="fill:var(--bsc-gray-700);"><use href="#i-shield"/></svg> Need Help?</h2>
